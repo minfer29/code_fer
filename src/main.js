@@ -1,6 +1,7 @@
 import './style.css' 
 import Split from 'split-grid'
 import {encode, decode} from 'js-base64'
+import loader from '@monaco-editor/loader'
 
 Split({
 	columnGutters: [{
