@@ -9,24 +9,16 @@
   <body>
     <div id="app">
       <section class="grid">
-        <div> 
-          <textarea name="html" id="html" placeholder = "HTML"></textarea>
-        </div>
+        <div class="editor" id="html"></div>
+        <div class="editor" id="css"></div>
+        <div class="editor" id="js"></div>
         <div>
-          <textarea name="css" id="css" placeholder="CSS"></textarea>
+          <iframe srcdoc=""></iframe>
         </div>
-        <div>
-          <textarea name="js" id="js" placeholder="JS"></textarea>
-        </div>
-        <div>
-        <iframe srcdoc = ""></iframe>
-        </div>
-        <div class="horizontal-gutter">
-        </div>
-        <div class="vertical-gutter">
-        </div>
+        <div class="horizontal-gutter"></div>
+        <div class="vertical-gutter"></div>
       </section>
-    </div>    
-    <script type="module" src = "./src/main.js"></script>
+    </div>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

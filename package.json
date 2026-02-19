@@ -14,7 +14,7 @@
   "dependencies": {
     "@monaco-editor/loader": "^1.7.0",
     "js-base64": "^3.7.8",
-    "monaco-editor": "0.55.1",
+    "monaco-editor": "^0.55.1",
     "split-grid": "^1.0.11"
   }
 }
