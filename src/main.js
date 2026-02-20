@@ -13,7 +13,6 @@ window.MonacoEnvironment = {
     if (label === "javascript") return new Jsworker();
   },
 };
-
 Split({
   columnGutters: [
     {
@@ -28,8 +27,6 @@ Split({
     },
   ],
 });
-
-const $ = (selector) => document.querySelector(selector);
 
 const $js = $("#js");
 const $css = $("#css");
