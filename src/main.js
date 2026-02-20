@@ -13,6 +13,7 @@ window.MonacoEnvironment = {
     if (label === "javascript") return new Jsworker();
   },
 };
+
 Split({
   columnGutters: [
     {
@@ -42,6 +43,9 @@ const html = decode(rawHtml);
 const css = decode(rawCss);
 const js = decode(rawJs);
 
+const htmlForPreview = createHtml({ html, js, css });
+$("iframe").setAttribute("srcdoc", htmlForPreview);
+
 const htmlEditor = monaco.editor.create($html, {
   value: html,
   language: "html",
@@ -66,9 +70,6 @@ const jsEditor = monaco.editor.create($js, {
 htmlEditor.onDidChangeModelContent(update);
 cssEditor.onDidChangeModelContent(update);
 jsEditor.onDidChangeModelContent(update);
-
-const htmlForPreview = createHtml({ html, js, css });
-$("iframe").setAttribute("srcdoc", htmlForPreview);
 
 function update() {
   const html = htmlEditor.getValue();

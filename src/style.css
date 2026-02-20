@@ -6,8 +6,8 @@
   box-sizing: inherit;
 }
 body {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: #000000;
+  color: #eee;
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -51,14 +51,16 @@ iframe {
 .editor {
   position: relative;
 }
-.editor::after {
+.editor:after {
   content: "";
   position: absolute;
+  background-repeat: no-repeat;
   width: 48px;
   height: 48px;
   z-index: 1;
   right: 16px;
   bottom: 16px;
+  padding: 24px;
 }
 
 #js {
