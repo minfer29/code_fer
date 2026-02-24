@@ -51,7 +51,7 @@ iframe {
 .editor {
   position: relative;
 }
-.editor:after {
+.editor::after {
   content: "";
   position: absolute;
   background-repeat: no-repeat;
