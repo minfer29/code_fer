@@ -51,43 +51,46 @@ iframe {
 .editor {
   position: relative;
 }
-.editor:after {
+.editor::after {
   content: "";
   position: absolute;
   background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
-  z-index: 1;
-  right: 16px;
+  width: 25px;
+  height: 25px;
   bottom: 16px;
+  right: 16px;
+  z-index: 5;
   padding: 24px;
 }
 
-#js {
-  background-image: url("/assets/js.svg");
-}
-#html {
+#html::after {
   background-image: url("/assets/html.svg");
 }
-#css {
+#css::after {
   background-image: url("/assets/css.svg");
+}
+#js::after {
+  background-image: url("/assets/js.svg");
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  grid-template-rows: 1fr 1px 1fr;
-  width: 100%;
+  grid-template-areas:
+    "editor-html . editor-js"
+    ". . ."
+    "editor-css . editor-preview";
+  grid-template-columns: 1fr 2px 1fr;
+  grid-template-rows: 1fr 2px 1fr;
   height: 100vh;
 }
 
 .vertical-gutter {
   cursor: col-resize;
   grid-area: 1 / 2 / 4 / 2;
-  border: solid 1px #333;
+  border: solid 1px #ffffff;
 }
 .horizontal-gutter {
   cursor: row-resize;
   grid-area: 2 / 1 / 2 / 4;
-  border: solid 1px #333;
+  border: solid 1px #ffffff;
 }

@@ -13,6 +13,9 @@ window.MonacoEnvironment = {
     if (label === "javascript") return new Jsworker();
   },
 };
+
+const $ = (selector) => document.querySelector(selector);
+
 Split({
   columnGutters: [
     {
@@ -36,9 +39,9 @@ const { pathname } = window.location;
 
 const [rawHtml, rawCss, rawJs] = pathname.slice(1).split("%7C");
 
-const html = decode(rawHtml);
-const css = decode(rawCss);
-const js = decode(rawJs);
+const html = rawHtml ? decode(rawHtml) : "";
+const css = rawCss ? decode(rawCss) : "";
+const js = rawJs ? decode(rawJs) : "";
 
 const htmlForPreview = createHtml({ html, js, css });
 $("iframe").setAttribute("srcdoc", htmlForPreview);
