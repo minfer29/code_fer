@@ -46,25 +46,28 @@ const js = rawJs ? decode(rawJs) : "";
 const htmlForPreview = createHtml({ html, js, css });
 $("iframe").setAttribute("srcdoc", htmlForPreview);
 
+const COMMON_EDITOR_OPTIOND = {
+  automaticLayout: true,
+  fontSize: 18,
+  theme: "vs-dark",
+};
+
 const htmlEditor = monaco.editor.create($html, {
   value: html,
   language: "html",
-  fontSize: 18,
-  theme: "vs-dark",
+  ...COMMON_EDITOR_OPTIOND,
 });
 
 const cssEditor = monaco.editor.create($css, {
   value: css,
   language: "css",
-  fontSize: 18,
-  theme: "vs-dark",
+  ...COMMON_EDITOR_OPTIOND,
 });
 
 const jsEditor = monaco.editor.create($js, {
   value: js,
   language: "javascript",
-  fontSize: 18,
-  theme: "vs-dark",
+  ...COMMON_EDITOR_OPTIOND,
 });
 
 htmlEditor.onDidChangeModelContent(update);
